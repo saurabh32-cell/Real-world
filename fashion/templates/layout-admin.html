@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    {{section.title}}
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+{% include 'navbar-admin.html' %}
+<div class="main">
+    {% block content %}
+    {% endblock %}
+</div>
+    <script src="{% static 'whole/js/jquery.js' %}"></script>
+    <script src="{% static 'whole/js/popper.js' %}"></script>
+</body>
+</html>
