@@ -1,0 +1,57 @@
+{% extends 'whole/main.html' %} {% load bootstrap %} {% block title %}
+<title>Products</title>
+{% endblock%} {% block content %}
+
+<style>
+
+</style>
+
+
+
+
+{% for message in messages %} {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+{% endif %} {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+<h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+{% endif %} {% endfor %} {%for product in products%}
+
+<div class="container">
+    <div class="tour-details">
+
+        <h2>Tour Details</h2>
+        <div class="col-md-4 ">
+            <img src="{{product.image.url}}" alt="Cloths" class="card-img-top">
+
+        </div>
+        <div class="col-md-8">
+            <div class="tour-details-content">
+                <ul>
+                    <li>
+                        <strong>  Tour Name:</strong> {{product.name}}
+                    </li>
+
+                    <li>
+                        <strong>  Tour Location :</strong> {{product.Tour_location}}
+                    </li>
+                    <li>
+                        <strong> Hotel For Stay:</strong> {{product.Hotel_For_Stay}}
+                    </li>
+                    <li>
+                        <strong> Total Cost  :</strong> RS{{product.price}}
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+       <div class="button-details">
+     <a href="/addToCart/{{product.id}}" class="btn button2 btn-info mx-3">ADD TO CART</a>
+
+
+</div>
+
+
+    </div>
+</div>
+
+
+ {%endfor%} {% endblock %}

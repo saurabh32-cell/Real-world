@@ -1,0 +1,197 @@
+{% extends 'whole/main.html' %} {% load static %} {% block title %} {% endblock title %} {% block content %}
+<style>
+    .col img{
+     height: 239px;
+    width: 384px;
+    }
+</style>
+<div class="banner">
+    <img src="static/images/header-bg.png" alt="">
+    <div class="header-content">
+        <h2>Travel is Fatal to Prejudice, Bigotry and Narrow-Mindedness</h2>
+        <div class="line"></div>
+        <h1>To Travel is to Live</h1>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+</div>
+<section id="">
+    <div class="container-fluid ">
+        <div class="col-md-12 text-center py-3">
+            <h2>
+                Popular
+                <span class="text-info">products</span>
+            </h2>
+            <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+        </div>
+        <div class="container bg-white py-3 col-sm-10 col-md-9 col-lg-10">
+            <div class="row">
+                {% for a in categories %}
+                <div class="col-md-4 py-2">
+                    <div class="card dest-card shadow-lg">
+                        <img src="/{{a.image}}" class="img-fluid ">
+                        <div class="card-body text-white" style="position: absolute; bottom: 50px; left: 10px;">
+                            <h2 class="text-primary">
+                                {{a.category_name}}
+                                <a href="/items/{{a.id}}" class="btn btn-outline-primary rounded-pill ml-5">
+                                    <span>
+                                        <strong>view</strong>
+                                    </span>
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- == Events == -->
+<section class="events">
+    <div class="title">
+        <h1>Upcoming Events</h1>
+        <div class="line"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="static/images/img1.png" alt="">
+            <h4>Maldives Beach Resort</h4>
+            <p>It is the favorite haunt of the swimming enthusiasts among the top places to visit in Maldives. The Artificial Beach is an open area and has certain restrictions for clothing as per the local law.</p>
+            <a href="/maldives" class="ctn">Learn More</a>
+        </div>
+        <div class="col">
+            <img src="static/images/img2.png" alt="">
+            <h4>Turkey Pamukkale Lake</h4>
+            <p>Deep in the earth beneath the city lies a vast source of water that is heated by volcanic lava. As a result, the water dissolves pure white calcium, and then becomes saturated with the calcium.</p>
+            <a href="#" class="ctn">Learn More</a>
+        </div>
+    </div>
+</section>
+<section class="explore">
+    <img src="static/images/img1.png" alt="">
+    <div class="explore-content">
+        <h1>Explore the World</h1>
+        <div class="line"></div>
+        <p>It is adorned with some stunning beaches, beautiful tropical flowers, and lavish greenery that pulls a great number of tourists wanting to bask in the lap of nature. With its extremely charming blue waters, sparkling beaches and fabulous resorts, the island guarantees immense joy to its guests. Given its serenity and beauty, it is among the most perfect places to visit in Maldives for couples and honeymooners.The calm water and the lustrous greenery that makes up the Huvahendhoo Island is where you should be for an undisturbed stay for rejuvenation. Whether you are traveling with family or your pack of friends, this island is where you can relax and detox yourself off of the hustle and bustle of daily city life. Known for a family oriented place, kids can have their share of fun at the Kids Club while the adults can enjoy their time walking down the soft white sandy beaches. With restaurants serving top-notch delicacies, both foreign and local.</p>
+        <a href="#">Learn More</a>
+    </div>
+</section>
+<section class="tours">
+    <div class="row">
+        <div class="col content-col">
+            <h1>Upcoming Packages and Events</h1>
+            <div class="line"></div>
+            <p>Major attractions at Artificial Beach: Shark Point, Manta Point, Nassimo Thila, Kani Corner
+
+Best places to stay: Isola Guest House, Huraa East Inn, Ocean Cottage, Eriyadu Island Resort & Spa.
+Best time to visit: November to April.It is adorned with some stunning beaches, beautiful tropical flowers, and lavish greenery that pulls a great number of tourists wanting to bask in the lap of nature. With its extremely charming blue waters, sparkling beaches and fabulous resorts, the island guarantees immense joy to its guests. Given its serenity and beauty, it is among the most perfect places to visit in Maldives for couples and honeymooners..
+
+</p>
+            <a href="#" class="ctn">Learn More</a>
+        </div>
+        <div class="col image-col">
+            <div class="image-gallery">
+                <img src="static/images/img3.jpg" alt="">
+                <img src="static/images/img4.jpg" alt="">
+                <img src="static/images/img5.jpeg" alt="">
+                <img src="static/images/img6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const menuBtn = document.querySelector('.menu-btn') const navlinks = document.querySelector('.nav-links') menuBtn.addEventListener('click', () => {
+        navlinks.classList.toggle('mobile-menu')
+    })
+</script>
+
+<div class="one">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Made the hard way</h2>
+                    <h3>Featured Categories</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/1.jpg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Australia</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/maldives.jpeg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Maldives</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/uk1.jpg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">UK</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/4.jpg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Thailand</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="one">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title ">
+                    <h3>
+                        Team Members
+                    </h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/bipson.jpeg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Bipson</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/saurabh.jpg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Saurabh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/sabin.jpg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Sabin</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categories-block">
+                    <img src="{% static 'images/pema.jpeg' %}" alt="" class="">
+                    <div class="overlay">
+                        <div class="text">Pema</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

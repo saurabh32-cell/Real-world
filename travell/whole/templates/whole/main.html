@@ -1,0 +1,225 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Saurabh Shrestha"> {%block title %} {{section.title}} {%endblock %}
+    <!-- <link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.css' s%}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" href="fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'whole/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ok.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/booking.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/razor.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/abouts.css' %}">
+
+    <title>Travel & Tourism</title>
+</head>
+
+<body>
+
+
+<!--    <nav class="navbar">-->
+<!--        <h1 class="logo">Travel & Tourism</h1>-->
+<!--        <ul class="nav-links">-->
+<!--            <li>-->
+<!--                <a href="http://127.0.0.1:8088">Home</a>-->
+<!--            </li>-->
+
+<!--            <li>-->
+<!--                <a href="#"></a>-->
+<!--                Packages-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="/about">About</a>-->
+<!--            </li>-->
+<!--                <a href="/teams">Teams</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="/products">Destination Places</a>-->
+<!--            </li>-->
+<!--            {% if user.is_authenticated %}-->
+<!--            <li class="nav-item">-->
+<!--                <a href="/accounts/logout" class="btn nav-button btn-sm mx-2 btn-warning">Logout</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a href="/accounts/profile" class="btn nav-button btn-sm mx-2 btn-info">My Profile</a>-->
+<!--            </li>-->
+<!--            {% else %}-->
+<!--            <li class="nav-item">-->
+<!--                <a href="/accounts/login" class="btn nav-button btn-sm mx-2 btn-warning">Login</a>-->
+<!--            </li>-->
+
+<!--            <li class="nav-item">-->
+<!--                <a href="/accounts/register" class="btn nav-button btn-sm mx-2 btn-info">Register</a>-->
+<!--            </li>-->
+<!--              {% endif %}-->
+<!--            <div class="form-inline my-2 my-lg-0">-->
+<!--                <a href="{% url 'cart' %}">-->
+<!--                    <img id="cart-icon" src="{% static 'images/cart3.png' %}">-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </ul>-->
+<!--        <img src="./img/menu-btn.png" alt="" class="menu-btn">-->
+<!--    </nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <h1 class="logo">Travel & Tourism</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/index">About</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/teams">Teams</a>
+        </li>
+
+          <li class="nav-item">
+          <a class="nav-link" href="/products">Destination Places</a>
+        </li>
+            {% if user.is_authenticated %}
+          <li class="nav-item">
+          <a href="/accounts/logout" class="btn nav-button btn-sm mx-2 btn-warning">Logout</a>
+        </li>
+          <li class="nav-item">
+         <a href="/accounts/profile" class="btn nav-button btn-sm mx-2 btn-info">My Profile</a>
+        </li>
+          {% else %}
+          <li class="nav-item">
+          <a href="/accounts/login" class="btn nav-button btn-sm mx-2 btn-warning">Login</a>
+        </li>
+           <li class="nav-item">
+         <a href="/accounts/register" class="btn nav-button btn-sm mx-2 btn-info">Register</a>
+        </li>
+            {% endif %}
+          <div class="form-inline my-2 my-lg-0">
+                <a href="{% url 'cart' %}">
+                    <img id="cart-icon" src="{% static 'images/cart3.png' %}">
+                </a>
+            </div>
+        </ul>
+        <img src="./img/menu-btn.png" alt="" class="menu-btn">
+
+
+
+      </ul>
+<!--      <form class="d-flex">-->
+<!--        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--        <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--      </form>-->
+    </div>
+  </div>
+</nav>
+    {% block content %}
+    {% endblock content %}
+    <div class="top-footer mt-4">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4">
+                    <h2>Travels and Tourism</h2>
+                    <div class="info-content">
+                        <ul>
+                            <li>E-mail: saurabhstha74@gmail.com</li>
+                            <li>Hours: 10:00 - 18:00, Mon - Fri</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <div class="top-footer-content">
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/index">About</a>
+                            </li>
+                            <li>
+                                <a href="/teams">Teams</a>
+                            </li>
+                             <li>
+                                <a href="/products">Destination Places</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Account Details</h5>
+                    <div class="top-footer-content">
+                        <ul>
+                            <li>
+                                <a href="/accounts/profile">My Profile</a>
+                            </li>
+                            <li>
+                                <a href="/accounts/register">Register</a>
+                            </li>
+                            <li>
+                                <a href="accounts/login">Login</a>
+                            </li>
+                            <li>
+                                <a href="/cart">Cart</a>
+                            </li>
+                            <li>
+                                <a href="/maldives">Cart</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Safe Payments</h5>
+                    <div class="top-footer-content">
+                        <ul>
+                            <li>
+                                <a href="/razor">
+                                    <img src="{% static 'images/razorpay.png' %} " class="images">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Copyright © - Travel and Tourism. All Rights Reserved. Designed By:
+                        <span> Saurabh Shrestha</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-2.2.2.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
+    <script src="{% static 'js/team.js'%}"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</body>
+
+</html>

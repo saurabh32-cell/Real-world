@@ -1,0 +1,58 @@
+{% extends 'whole/main.html' %} {% load static %} {% block title %} {% endblock title %} {% block content %}
+<style>
+    .col img{
+     height: 239px;
+    width: 384px;
+    }
+</style>
+<section class="events">
+    <div class="title">
+        <h1>Upcoming Events</h1>
+        <div class="line"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'images/y.webp' %}" alt="">
+            <h4>Maldives Beach Resort</h4>
+            <p>Located in North Mal- Atoll, Banana Reef is globally renowned for being one of the best diving sites in the world which adds it to the list of top Maldives points of interest. It was, in fact, the very first diving spot in Maldives to get recognition for licensed diving and training. Shaped like a banana, the reef is choc-a-block with exuberant marine life, fantastic corals, amazing cliffs, overhangs, and caves. And thanks to the myriad adventure activities here, it is one of the favorite places to visit in Maldives for the adventure junkies.</p>
+
+        </div>
+        <div class="col">
+            <img src="{% static 'images/x.jpg.webp' %}"  alt="">
+            <h4>Turkey Pamukkale Lake</h4>
+            <p>Also famous as the Sun Island, Nalaguraidhoo Island in South Ari Atoll is among the top Maldives points of interest. It is adorned with some stunning beaches, beautiful tropical flowers, and lavish greenery that pulls a great number of tourists wanting to bask in the lap of nature. With its extremely charming blue waters, sparkling beaches and fabulous resorts, the island guarantees immense joy to its guests. Given its serenity and beauty, it is among the most perfect places to visit in Maldives for couples and honeymooners..</p>
+
+        </div>
+    </div>
+</section>
+<section class="events">
+
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'images/m.jpg.dms' %}" alt="">
+            <h4>Maldives Beach Resort</h4>
+            <p>Sitting on the eastern edge of Maldives, Alimatha Island is located in Vaavu Atoll. With its azure, crystal clear waters — apt for diving, snorkeling and boating, the island is a perfect spot for a family vacation and for honeymoon too, since it is considered one of the best places to visit in Maldives for couples. Volleyball matches in the sun-kissed beaches and the dazzling sand, here, are great fun. The Ayurvedic massage center, spa, bars, and restaurants make it a revitalizing option among the popular tourist places in Maldives.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'images/z.webp' %}"  alt="">
+            <h4>Turkey Pamukkale Lake</h4>
+            <p>The calm water and the lustrous greenery that makes up the Huvahendhoo Island is where you should be for an undisturbed stay for rejuvenation. Whether you are traveling with family or your pack of friends, this island is where you can relax and detox yourself off of the hustle and bustle of daily city life. Known for a family oriented place, kids can have their share of fun at the Kids Club while the adults can enjoy their time walking down the soft white sandy beaches. With restaurants serving top-notch delicacies, both foreign and local. </p>
+
+        </div>
+    </div>
+</section>
+
+<section class="explore">
+    <img src="{% static 'images/img2.png' %}"alt="">
+    <div class="explore-content">
+        <h1>Explore the World</h1>
+        <div class="line"></div>
+        <p>The Maldives is one of the most unique holiday destinations in the world! A vast underwater mountain range makes up the country, less than 4% of which breaks the water’s surface. The visible tips of the range form over 1000 low-lying islands. Roughly 200 of these islands are inhabited, and nearly 100 of them have been developed as luxury tourist resorts.
+The Maldives is located in the Indian Ocean, at the top of the equator. The country enjoys year-round warm weather and a consistent average temperature of 28°C. Water temperatures range between 26°C – 29°C and, when combined with the abundance of tropical fish, marine life, and iconic over-water bungalows, the Maldives is an ideal holiday destination for all water-lovers!</p>
+        <a href="#">Learn More</a>
+    </div>
+</section>
+
+
+
+{% endblock content%}

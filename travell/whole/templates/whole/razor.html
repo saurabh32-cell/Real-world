@@ -1,0 +1,134 @@
+{% extends 'whole/main.html' %} {% load static %} {% block title %} {% endblock title %} {% block content %}
+<style>
+    .two{
+    padding-left:36%;
+    }
+
+</style>
+
+<!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/2d1c7583b1.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<div class="one">
+    <section class="container">
+        <header>
+            <div id="menu"><img src="https://thinsoldier.com/wip/nike-grid/images/icon-menu.svg" alt="Menu"></div>
+            <div id="logo"><img src="https://thinsoldier.com/wip/nike-grid/images/nike_logo.png" alt="Nike Logo"></div>
+            <div id="cart"><p>1 item <i class="fa fa-shopping-cart" aria-hidden="true"></i></p></div>
+        </header>
+        <section class="content">
+            <article id="checkoutNav" class="shadow">
+                <ul>
+                    <li>
+                        <p>01</p>
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        <p>Shipping</p>
+                    </li>
+                    <li class="active">
+                        <p>02</p>
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <p>Payment</p>
+                    </li>
+                    <li>
+                        <p>03</p>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <p>Success</p>
+                    </li>
+                </ul>
+            </article>
+            <article id="product" class="shadow"><img src="https://images.unsplash.com/photo-1574223706388-0e0f6f0390b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Lunar 2"></article>
+            <h1>Pay Now</h1>
+            <article id="checkoutCard" class="shadow">
+                <div id="details">
+                    <dl class="">
+                        <dt>Product</dt>
+                        <dd> <img id="thumbnail" src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Lunar 2"></dd>
+                        <dt>Quantity</dt>
+                        <dd> <input class ='price' type="number" value="1"> </dd>
+                        <dt>Price</dt>
+                        <dd> RS5000 </dd>
+                    </dl>
+                </div>
+                <form action="">
+                    <div id="cards">
+
+                        <ul>
+                        <li><label for="" name="Card Type">Card Type</label></li>
+                            <li><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-cc-paypal" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-cc-amex" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+
+                    <div id="cardNumber">
+                        <label for="">Card number</label>
+                        <input type="number" placeholder="XXXX">
+                        <input type="number" placeholder="XXXX">
+                        <input type="number" placeholder="XXXX">
+                        <input type="number" placeholder="XXXX">
+                    </div>
+                    <div id="securityInfo">
+                        <label class="four" for="">Name</label>
+                        <label class="four" for="">Email</label>
+                        <label class="four" for="">Phone NO.</label>
+                        <input type="address" placeholder="MM/YY">
+                        <input type="text" placeholder="MM/YY">
+                        <input type="number" placeholder="XXX">
+                    </div>
+
+                   <div class="two">
+                     <button type="button" id="pay-btn" class="btn btn-warning ">Pay Now</button>
+                       </div>
+
+                </form>
+            </article>
+        </section>
+        </section>
+
+		<!-- Payment Button -->
+
+
+
+<!-- Razorpay's Javascript code. -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+	var options = {
+
+	// Enter the Key ID generated from the Dashboard
+	key: "{{ razorpay_merchant_key }}",
+
+	// Amount is in currency subunits.
+	// Default currency is INR. Hence,
+	// 50000 refers to 50000 paise
+	amount: "{{ razorpay_amount }}",
+	currency: "{{ currency }}",
+
+	// Your/store name.
+	name: "Dj Razorpay",
+
+	// Pass the `id` obtained in the response of Step 1
+	order_id: "{{ razorpay_order_id }}",
+	callback_url: "{{ callback_url }}",
+	};
+
+	// initialise razorpay with the options.
+	var rzp1 = new Razorpay(options);
+
+	// add event listener to the payment button.
+	document.getElementById("pay-btn").onclick = function (e) {
+	rzp1.open();
+	e.preventDefault();
+	};
+</script>
+
+
+
+{% endblock content %}

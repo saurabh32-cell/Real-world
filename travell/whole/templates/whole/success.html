@@ -1,0 +1,74 @@
+
+
+{% extends 'whole/main.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<head>
+    <style>
+        .center {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .container h4{
+        text-align:center;
+        }
+         .container h3{
+        text-align:center;
+        font-size:52;
+
+        }
+          .container h1{
+        text-align:center;
+           font-size:45;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+
+
+    </div>
+</body>
+<div class="container">
+
+<h3>Personal Details</h3>
+<h4>Name: Saurabh Shrestha</h4>
+<h4>Email:Saurabhstha74@gmail.com</h4>
+<h4>Phone No: 9867208532</h4>
+<h4>City: Butwal</h4>
+<h4>Address: Kalikanagar</h4>
+      <h1><span style="color: #ff9f43">You</span><span style="color: #0abde3">r Booking</span> <span style="color: #ee5253"> I</span><span style="color: #00d2d3">s Do<span><span style="color: #5f27cd">ne<span></h1>
+         <h1><span style="color: #ff9f43">Th</span><span style="color: #0abde3">ank</span> <span style="color: #00d2d3">you</span> <span></h1>
+
+        <h5>
+            <a href="http://127.0.0.1:8088/razor/" class="btn btn-sm btn-success">Payment</a>
+            	<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+
+        </h5>
+</div>
+<div class="col-lg-6">
+			<div class="box-element">
+				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+
+				{% for item in items %}
+            <div class ="cart-row">
+                <div style="flex:2"><img class="row-image" src="/{{item.product.image}}"></div>
+                <div style="flex:2">{{item.product}}</div>
+                <div style="flex:1">{{item.product.price}}</div>
+
+
+                <div style="flex:1"></div>
+            </div>
+            {%endfor%}
+            </div>
+        </div>
+
+
+{% endblock content %}

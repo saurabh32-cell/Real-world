@@ -1,0 +1,82 @@
+{% extends 'whole/main.html' %}
+
+{% load static %}
+{% block content %}
+<style>
+    .oks{
+    margin-top:-90px;
+    }
+    .box-element  strong{
+       padding-left: 370px;
+    }
+     .box-element  h1{
+          padding-left: 355px;
+    font-size: 19px;
+    font-weight: bold;
+    }
+     .box-element  h2{
+     font-weight: bold;
+    padding-left: 146px;
+    font-size: 19px;
+    }
+      .box-element  h3{
+ font-size: 19px;
+    font-weight: bold;-left: 0px;
+    }
+</style>
+
+<div class="oks">
+
+<div class="row">
+    <div class ="col-lg-12">
+        <div class ="box-element">
+            <a class ="btn btn-outline-dark btn-warning" href="/products">Continue Shopping</a>
+            <br>
+            <br>
+           <table class ="table">
+               <tr>
+                   
+                   <th>
+                       <a style="float:right;margin:5px"class="btn btn-success" href="/checkout">Booking</a>
+                   </th>
+               </tr>
+           </table>
+        </div>
+
+        <div class ="box-element">
+            <div class ="cart-row">
+                  <div class="be" ><h3>Image </h3></div>
+                <div class="ab">
+                    <strong>Tour Name </strong></div>
+                   <div class="bc"><h1>Total Cost </h1></div>
+                <div class="cdx"><h2>Actions</h2></div>
+
+
+            </div>
+
+            {% for item in items %}
+            <div class ="cart-row">
+                <div style="flex:2"><img class="row-image" src="/{{item.product.image}}"></div>
+                <div style="flex:2">{{item.product}}</div>
+                <div style="flex:1">{{item.product.price}}</div>
+                <div class="edit">
+                 <tr>
+
+<!--                        <td><a href="/updateitem/{{item.id}}" class="btn btn-sm btn-success">Edit</a>-->
+                        <a href="/deleteitem/{{item.id}}"
+                           onclick="return confirm('Are you sure want to delete?')"
+                           class="btn btn-sm btn-danger">Delete</a> </td>
+                    </tr>
+                    </div>
+
+
+                <div style="flex:1"></div>
+            </div>
+            {%endfor%}
+        </div>
+
+    </div>
+</div>
+    </div>
+
+{% endblock content %}
